@@ -1,0 +1,1 @@
+# folovor_rubika.github.io

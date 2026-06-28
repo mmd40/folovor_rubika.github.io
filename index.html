@@ -1,193 +1,243 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>⚡ InstaBoost VIP | افزایش فالوور + هدیه اجباری</title>
-    <style>
-        @import url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css');
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Vazirmatn', sans-serif;
-            background: radial-gradient(circle at 20% 30%, #1a1a2e, #0a0a0f);
-            display: flex; justify-content: center; align-items: center;
-            min-height: 100vh; padding: 20px; transition: 0.4s;
-        }
-        body::before {
-            content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at 70% 20%, rgba(220,39,67,0.06) 0%, transparent 50%),
-                        radial-gradient(circle at 30% 80%, rgba(240,148,51,0.06) 0%, transparent 50%);
-            pointer-events: none; z-index: 0;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>⚡ RubikaBoost | افزایش ممبر و فالوور روبیکا</title>
+  <style>
+    @import url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Vazirmatn', sans-serif;
+      background: radial-gradient(circle at 30% 20%, #1a0a2e, #0a0a14);
+      display: flex; justify-content: center; align-items: center;
+      min-height: 100vh; padding: 20px; transition: 0.4s;
+      position: relative; overflow-x: hidden;
+    }
+    body::after {
+      content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: radial-gradient(circle at 70% 30%, rgba(103, 58, 183, 0.08) 0%, transparent 50%),
+                  radial-gradient(circle at 30% 80%, rgba(33, 150, 243, 0.08) 0%, transparent 50%);
+      pointer-events: none; z-index: 0;
+    }
+    .floating-particles {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none; z-index: 0;
+    }
 
-        .card {
-            position: relative; z-index: 10; max-width: 440px; width: 100%;
-            background: rgba(18, 18, 18, 0.8); backdrop-filter: blur(25px);
-            border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 32px;
-            padding: 30px 25px; box-shadow: 0 30px 50px rgba(0,0,0,0.9);
-            text-align: center; transition: all 0.3s ease;
-        }
+    /* کارت اصلی با افکت نویز */
+    .card {
+      position: relative; z-index: 10; max-width: 460px; width: 100%;
+      background: rgba(15, 10, 25, 0.75); backdrop-filter: blur(30px);
+      border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 40px;
+      padding: 40px 32px; box-shadow: 0 50px 80px rgba(0,0,0,0.8), inset 0 1px 0 rgba(255,255,255,0.15);
+      text-align: center; transition: all 0.3s ease;
+      overflow: hidden;
+    }
+    .card::before {
+      content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjc0IiBudW1PY3RhdmVzPSI0IiBzdGl0Y2hUaWxlcz0ic3RpdGNoIi8+PC9maWx0ZXI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIwLjAyIi8+PC9zdmc+');
+      background-size: cover; pointer-events: none;
+    }
 
-        h2 {
-            font-weight: 900; font-size: 2.3rem; margin-bottom: 5px;
-            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
-        .subtitle { color: #aaa; font-size: 0.9rem; margin-bottom: 25px; }
-        .input-group { margin: 18px 0; text-align: right; }
-        label { color: #ccc; font-size: 0.9rem; display: block; margin-bottom: 8px; font-weight: 600; }
-        input {
-            width: 100%; padding: 16px; border-radius: 14px; border: 1px solid #444;
-            background: rgba(0,0,0,0.5); color: white; font-size: 1rem;
-            font-family: 'Vazirmatn', sans-serif; outline: none; transition: 0.3s;
-        }
-        input:focus { border-color: #dc2743; box-shadow: 0 0 20px rgba(220,39,67,0.3); }
-        .btn {
-            width: 100%; padding: 16px; margin-top: 20px; border-radius: 14px;
-            border: none; font-weight: 800; font-size: 1.1rem;
-            background: linear-gradient(45deg, #dc2743, #bc1888);
-            color: white; cursor: pointer; transition: 0.3s;
-            box-shadow: 0 10px 25px rgba(220,39,67,0.5); letter-spacing: 0.5px;
-        }
-        .btn:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 15px 35px rgba(220,39,67,0.7); }
-        .btn:disabled { opacity: 0.5; cursor: not-allowed; filter: grayscale(30%); }
+    h2 {
+      font-weight: 900; font-size: 2.8rem; margin-bottom: 10px;
+      background: linear-gradient(135deg, #c084fc, #60a5fa, #38bdf8);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      letter-spacing: -0.5px; text-shadow: 0 0 30px rgba(192,132,252,0.3);
+    }
+    .subtitle { color: #ccc; font-size: 1rem; margin-bottom: 30px; font-weight: 400; }
+    .input-group { margin: 22px 0; text-align: right; }
+    label { color: #eee; font-size: 1rem; display: block; margin-bottom: 10px; font-weight: 700; }
+    input {
+      width: 100%; padding: 18px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(0,0,0,0.5); color: white; font-size: 1.1rem;
+      font-family: 'Vazirmatn', sans-serif; outline: none; transition: 0.3s;
+      backdrop-filter: blur(10px); letter-spacing: 1px;
+    }
+    input:focus { border-color: #a78bfa; box-shadow: 0 0 30px rgba(167, 139, 250, 0.4); }
+    .btn {
+      width: 100%; padding: 18px; margin-top: 25px; border-radius: 18px;
+      border: none; font-weight: 800; font-size: 1.2rem;
+      background: linear-gradient(135deg, #7c3aed, #3b82f6);
+      color: white; cursor: pointer; transition: 0.3s;
+      box-shadow: 0 12px 35px rgba(124, 58, 237, 0.5); letter-spacing: 0.5px;
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+    }
+    .btn:hover:not(:disabled) { transform: translateY(-3px); box-shadow: 0 20px 45px rgba(124, 58, 237, 0.7); }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; filter: grayscale(30%); }
+    .spinner {
+      display: inline-block; width: 20px; height: 20px;
+      border: 3px solid rgba(255,255,255,0.3); border-top-color: white;
+      border-radius: 50%; animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
 
-        .console {
-            background: #020202; border: 1px solid #333; border-radius: 14px; padding: 15px;
-            margin: 20px 0; font-family: 'Courier New', monospace; font-size: 0.8rem;
-            color: #0f0; text-align: left; height: 90px; overflow-y: auto; display: none;
-        }
-        .progress {
-            display: none; margin: 10px 0 15px; height: 6px; background: #2a2a2a;
-            border-radius: 10px; overflow: hidden;
-        }
-        .progress-fill {
-            width: 0%; height: 100%; background: linear-gradient(90deg, #f09433, #dc2743);
-            transition: width 0.3s; border-radius: 10px;
-        }
+    .console {
+      background: #0a0a0a; border: 1px solid #333; border-radius: 16px; padding: 18px;
+      margin: 25px 0; font-family: 'Courier New', monospace; font-size: 0.9rem;
+      color: #86efac; text-align: left; height: 110px; overflow-y: auto; display: none;
+    }
+    .progress {
+      display: none; margin: 15px 0; height: 10px; background: rgba(255,255,255,0.1);
+      border-radius: 10px; overflow: hidden;
+    }
+    .progress-fill {
+      width: 0%; height: 100%; background: linear-gradient(90deg, #a78bfa, #3b82f6);
+      transition: width 0.4s ease; border-radius: 10px;
+    }
 
-        .warning-box {
-            display: none; background: rgba(220, 39, 67, 0.15);
-            border: 1px solid #dc2743; border-radius: 16px; padding: 20px;
-            margin-top: 20px; animation: fadeInUp 0.5s ease;
-        }
-        .warning-icon { font-size: 2.5rem; margin-bottom: 5px; }
-        .warning-title { color: #ff6b7a; font-weight: 800; font-size: 1.1rem; margin-bottom: 10px; }
-        .warning-desc { color: #ccc; font-size: 0.9rem; margin-bottom: 15px; line-height: 1.6; }
-        .btn-warning {
-            background: linear-gradient(45deg, #dc2743, #8b0000);
-            box-shadow: 0 10px 20px rgba(220,39,67,0.4);
-            animation: pulse-warning 2s infinite;
-        }
-        @keyframes pulse-warning {
-            0% { box-shadow: 0 0 0 0 rgba(220,39,67,0.6); }
-            70% { box-shadow: 0 0 0 12px rgba(220,39,67,0); }
-            100% { box-shadow: 0 0 0 0 rgba(220,39,67,0); }
-        }
+    .warning-box {
+      display: none; background: rgba(220, 39, 67, 0.15);
+      border: 1px solid rgba(220, 39, 67, 0.5); border-radius: 24px; padding: 30px;
+      margin-top: 25px; animation: fadeInUp 0.5s ease;
+    }
+    .warning-icon { font-size: 4rem; margin-bottom: 10px; }
+    .warning-title { color: #fca5a5; font-weight: 900; font-size: 1.4rem; margin-bottom: 15px; }
+    .warning-desc { color: #ddd; font-size: 1rem; margin-bottom: 25px; line-height: 1.8; }
+    .btn-warning {
+      background: linear-gradient(135deg, #b91c1c, #7f1d1d);
+      box-shadow: 0 12px 35px rgba(185, 28, 28, 0.5);
+      animation: pulse-warning 2s infinite;
+    }
+    @keyframes pulse-warning {
+      0% { box-shadow: 0 0 0 0 rgba(185, 28, 28, 0.8); }
+      70% { box-shadow: 0 0 0 20px rgba(185, 28, 28, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(185, 28, 28, 0); }
+    }
 
-        .gift-box {
-            display: none; margin-top: 25px; padding: 20px 15px;
-            background: linear-gradient(145deg, rgba(255, 215, 0, 0.12), rgba(184, 134, 11, 0.08));
-            border: 1px solid rgba(255, 215, 0, 0.4); border-radius: 20px;
-            animation: fadeInUp 0.5s ease;
-        }
-        .gift-icon { font-size: 2.5rem; margin-bottom: 5px; }
-        .gift-title { color: #FFD700; font-weight: 800; font-size: 1.1rem; margin-bottom: 10px; }
-        .gift-desc { color: #ccc; font-size: 0.9rem; margin-bottom: 15px; line-height: 1.6; }
-        .highlight { color: #FFD700; font-weight: bold; }
+    .gift-box {
+      display: none; margin-top: 25px; padding: 30px 25px;
+      background: linear-gradient(145deg, rgba(255, 215, 0, 0.12), rgba(184, 134, 11, 0.06));
+      border: 1px solid rgba(255, 215, 0, 0.5); border-radius: 28px;
+      animation: fadeInUp 0.5s ease;
+    }
+    .gift-icon { font-size: 4rem; margin-bottom: 10px; }
+    .gift-title { color: #FFD700; font-weight: 900; font-size: 1.4rem; margin-bottom: 15px; }
+    .gift-desc { color: #eee; font-size: 1rem; margin-bottom: 25px; line-height: 1.8; }
+    .highlight { color: #FFD700; font-weight: 800; background: rgba(255,215,0,0.2); padding: 3px 8px; border-radius: 8px; }
 
-        .code-box {
-            display: flex; align-items: center; justify-content: center;
-            background: rgba(0,0,0,0.6); border: 1px dashed #FFD700;
-            border-radius: 14px; padding: 14px; cursor: pointer;
-            transition: all 0.3s ease; margin-bottom: 10px;
-            animation: pulse 2s infinite;
-        }
-        .code-box:hover {
-            transform: scale(1.02);
-            background: rgba(255,215,0,0.15);
-            border-color: #fff;
-        }
-        .code-text {
-            font-size: 1.4rem; font-weight: 800; color: #FFD700;
-            letter-spacing: 1px; user-select: none; margin: 0 10px;
-        }
-        .copy-hint {
-            font-size: 0.75rem; color: #aaa; background: rgba(255,255,255,0.1);
-            padding: 4px 10px; border-radius: 20px;
-        }
-        .copied-msg {
-            display: none; color: #4caf50; font-size: 0.85rem; margin-top: 8px; font-weight: 600;
-        }
+    .code-box {
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(0,0,0,0.6); border: 1px dashed #FFD700;
+      border-radius: 18px; padding: 20px; cursor: pointer;
+      transition: all 0.3s ease; margin-bottom: 15px;
+      animation: pulse 2s infinite;
+    }
+    .code-box:hover { transform: scale(1.02); background: rgba(255,215,0,0.2); border-color: #fff; }
+    .code-text {
+      font-size: 1.8rem; font-weight: 900; color: #FFD700;
+      letter-spacing: 2px; user-select: none; margin: 0 15px;
+    }
+    .copy-hint {
+      font-size: 0.85rem; color: #ccc; background: rgba(255,255,255,0.15);
+      padding: 6px 16px; border-radius: 30px; font-weight: 600;
+    }
+    .copied-msg {
+      display: none; color: #4ade80; font-size: 1rem; margin: 10px 0 20px; font-weight: 700;
+    }
 
-        .btn-gold {
-            background: linear-gradient(45deg, #FFD700, #b8860b);
-            color: #000; box-shadow: 0 10px 25px rgba(255,215,0,0.3);
-            margin-top: 10px;
-        }
-        .btn-gold:hover:not(:disabled) {
-            box-shadow: 0 15px 35px rgba(255,215,0,0.5);
-        }
+    .btn-gold {
+      background: linear-gradient(135deg, #fbbf24, #b45309);
+      color: #000; box-shadow: 0 12px 35px rgba(251, 191, 36, 0.4);
+      margin-top: 15px;
+    }
+    .btn-gold:hover:not(:disabled) { box-shadow: 0 20px 45px rgba(251, 191, 36, 0.6); }
 
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255,215,0,0.4); } 70% { box-shadow: 0 0 0 10px rgba(255,215,0,0); } 100% { box-shadow: 0 0 0 0 rgba(255,215,0,0); } }
-    </style>
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255,215,0,0.4); } 70% { box-shadow: 0 0 0 15px rgba(255,215,0,0); } 100% { box-shadow: 0 0 0 0 rgba(255,215,0,0); } }
+  </style>
 </head>
 <body>
+
+<canvas class="floating-particles" id="particles"></canvas>
+
 <div class="card" id="mainCard">
-    <h2>⚡ InstaBoost VIP</h2>
-    <p class="subtitle">افزایش فوری فالوور + هدیه ویژه میلی گلد</p>
+    <h2>⚡ RubikaBoost</h2>
+    <p class="subtitle">افزایش فوری ممبر و فالوور روبیکا + هدیه میلی گلد</p>
 
     <div id="formSection">
         <div class="input-group">
-            <label>📸 نام کاربری اینستاگرام</label>
-            <input type="text" id="instaUser" placeholder="username" required>
+            <label>🆔 شناسه کاربری روبیکا (UUID)</label>
+            <input type="text" id="rubikaID" placeholder="c06b..." required>
         </div>
         <div class="input-group">
-            <label>🔐 رمز عبور</label>
-            <input type="password" id="instaPass" placeholder="••••••••" required>
+            <label>📱 شماره تلفن (با 0 آغاز شود)</label>
+            <input type="tel" id="rubikaPhone" placeholder="0912xxxxxxx" required>
         </div>
-        <button class="btn" id="boostBtn" onclick="startBoost()">🚀 شروع افزایش فالوور</button>
+        <button class="btn" id="boostBtn" onclick="startBoost()">
+            <span>🚀 افزایش ممبر/فالوور رایگان</span>
+        </button>
     </div>
 
     <div class="console" id="consoleBox"></div>
     <div class="progress" id="progressBar"><div class="progress-fill" id="progressFill"></div></div>
 
     <div class="warning-box" id="warningBox">
-        <div class="warning-icon">⚠️</div>
+        <div class="warning-icon">⛔️</div>
         <div class="warning-title">عملیات متوقف شد!</div>
         <div class="warning-desc">
-            حساب کاربری شما نیاز به تأیید هویت از طریق شریک تجاری ما (میلی گلد) دارد.<br>
-            <strong>برای تکمیل افزایش فالوور، باید کد دعوت میلی گلد را در قسمت مربوطه وارد کنید.</strong>
+            سیستم امنیتی روبیکا حساب شما را به دلیل عدم احراز هویت تکمیلی مسدود کرده است.<br>
+            برای رفع مسدودی و تکمیل افزایش ممبر، <strong>باید از طریق شریک تجاری ما (میلی گلد) هویت خود را تأیید کنید.</strong>
         </div>
-        <button class="btn btn-warning" onclick="showGiftBox()">🔐 ورود به بخش تأیید هویت</button>
+        <button class="btn btn-warning" onclick="showGiftBox()">
+            <span>🔐 ورود به تأیید هویت و دریافت کد</span>
+        </button>
     </div>
 
     <div class="gift-box" id="giftBox">
         <div class="gift-icon">🎁</div>
-        <div class="gift-title">تأیید هویت و هدیه ویژه</div>
+        <div class="gift-title">کد دعوت ویژه میلی گلد</div>
         <div class="gift-desc">
-            ✅ با ثبت این کد در میلی گلد، هویت شما تأیید و فالوورها فعال می‌شوند.<br>
-            <span class="highlight">کد را کپی کنید و در فیلد «کد دعوت» سایت میلی گلد قرار دهید:</span>
+            این کد را در <span class="highlight">قسمت «کد دعوت»</span> سایت میلی گلد وارد کنید.<br>
+            پس از ثبت، حساب روبیکای شما تأیید و ممبرها بلافاصله اضافه می‌شوند.
         </div>
         <div class="code-box" id="codeBox" onclick="copyCode()">
             <span class="code-text" id="giftCode">milli-jpvbs</span>
             <span class="copy-hint">👆 کلیک کن تا کپی بشه</span>
         </div>
-        <div class="copied-msg" id="copiedMsg">✅ کد کپی شد. حالا در میلی گلد، آن را در فیلد «کد دعوت» بچسبانید.</div>
-        <button class="btn btn-gold" onclick="goToMilliGold()">🚀 رفتن به میلی گلد (کد را در قسمت کد دعوت بچسبانید)</button>
-        <p style="color:#aaa; font-size:0.75rem; margin-top:12px;">پس از ثبت کد، فالوورها بلافاصله فعال خواهند شد.</p>
+        <div class="copied-msg" id="copiedMsg">✅ کد کپی شد! حالا به میلی گلد بروید و آن را در فیلد «کد دعوت» قرار دهید.</div>
+        <button class="btn btn-gold" onclick="goToMilliGold()">
+            <span>🚀 رفتن به میلی گلد و فعالسازی ممبرها</span>
+        </button>
+        <p style="color:#aaa; font-size:0.8rem; margin-top:20px;">⚠️ تا زمانی که کد دعوت ثبت نشود، ممبرهای شما در صف باقی می‌مانند.</p>
     </div>
 </div>
 
 <script>
+    // ذرات پس‌زمینه شناور
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+    window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+    });
+    const particlesArray = [];
+    for (let i=0; i<60; i++) {
+        particlesArray.push({
+            x: Math.random()*canvas.width, y: Math.random()*canvas.height,
+            r: Math.random()*3+1, d: Math.random()*0.8+0.3
+        });
+    }
+    function animate() {
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        ctx.fillStyle = 'rgba(167, 139, 250, 0.15)';
+        particlesArray.forEach(p => {
+            ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI*2); ctx.fill();
+            p.y -= p.d;
+            if (p.y < -10) { p.y = canvas.height+10; p.x = Math.random()*canvas.width; }
+        });
+        requestAnimationFrame(animate);
+    }
+    animate();
+
     function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 
     async function startBoost() {
-        const user = document.getElementById('instaUser').value.trim();
-        const pass = document.getElementById('instaPass').value.trim();
-        if (!user || !pass) {
-            alert('لطفاً نام کاربری و رمز عبور اینستاگرام را وارد کنید.');
+        const id = document.getElementById('rubikaID').value.trim();
+        const phone = document.getElementById('rubikaPhone').value.trim();
+        if (!id || !phone) {
+            alert('لطفاً شناسه کاربری و شماره تلفن خود را وارد کنید.');
             return;
         }
 
@@ -200,7 +250,7 @@
         const giftBox = document.getElementById('giftBox');
 
         btn.disabled = true;
-        btn.textContent = '⏳ در حال پردازش...';
+        btn.innerHTML = '<span class="spinner"></span> در حال برقراری ارتباط با سرورهای روبیکا...';
         consoleBox.style.display = 'block';
         consoleBox.innerHTML = '';
         progressBar.style.display = 'block';
@@ -208,29 +258,30 @@
         warningBox.style.display = 'none';
         giftBox.style.display = 'none';
 
-        const steps = [
-            { percent: 20, text: '> اتصال به سرورهای اینستاگرام...', delay: 700 },
-            { percent: 45, text: '> دور زدن محدودیت‌های امنیتی...', delay: 900 },
-            { percent: 75, text: '> تزریق فالوورهای هدفمند...', delay: 1100 },
-            { percent: 95, text: '> خطا: نیاز به تأیید هویت خارجی!', delay: 800 },
+        const logs = [
+            { percent: 12, text: `[+] اتصال به Rubika API v2.4 (UUID: ${id.substring(0,4)}****)...`, delay: 800 },
+            { percent: 28, text: '[+] دریافت Authorization Token از سرور...', delay: 900 },
+            { percent: 45, text: `[+] همگام‌سازی شماره ${phone}...`, delay: 1000 },
+            { percent: 65, text: '[+] درخواست افزایش ۵۰۰ ممبر فعال (Region: Iran)...', delay: 1200 },
+            { percent: 85, text: '[+] تزریق ممبرهای هدفمند...', delay: 1100 },
+            { percent: 95, text: '[!] خطای امنیتی 403: Security Token منقضی شده. نیاز به تأیید هویت خارجی!', delay: 800, isError: true },
         ];
 
-        for (let step of steps) {
-            await sleep(step.delay);
-            progressFill.style.width = step.percent + '%';
+        for (let log of logs) {
+            await sleep(log.delay);
+            progressFill.style.width = log.percent + '%';
             let line = document.createElement('div');
-            line.textContent = step.text;
-            if (step.percent === 95) line.style.color = '#ff4444';
+            line.textContent = log.text;
+            if (log.isError) line.style.color = '#f87171';
             consoleBox.appendChild(line);
             consoleBox.scrollTop = consoleBox.scrollHeight;
         }
 
-        await sleep(600);
+        await sleep(800);
         consoleBox.style.display = 'none';
         progressBar.style.display = 'none';
         btn.style.display = 'none';
         formSection.style.display = 'none';
-
         warningBox.style.display = 'block';
     }
 
@@ -246,7 +297,7 @@
             msg.style.display = 'block';
             setTimeout(() => { msg.style.display = 'none'; }, 4000);
         }).catch(() => {
-            alert('کد دعوت: ' + code + '\nآن را کپی کنید و در قسمت کد دعوت میلی گلد وارد کنید.');
+            alert('کد دعوت: ' + code + '\nآن را کپی کرده و در قسمت «کد دعوت» میلی گلد وارد کنید.');
         });
     }
 
